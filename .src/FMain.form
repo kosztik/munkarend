@@ -1,0 +1,74 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,98,66)
+  Text = ("Munkarend jelentés V0.2")
+  Resizable = False
+  { File Menu
+    Text = ("File")
+    { settings Menu
+      Text = ("Settings")
+    }
+    { exit Menu
+      Text = ("Exit")
+    }
+  }
+  { DateChooser1 DateChooser
+    MoveScaled(2,2,40,28)
+  }
+  { Button_normal Button
+    MoveScaled(45,4,16,4)
+    Text = ("Normál")
+  }
+  { Button_szabadsag Button
+    MoveScaled(45,9,16,4)
+    Text = ("Szabadság")
+  }
+  { Button_csusztatas Button
+    MoveScaled(45,14,16,4)
+    Text = ("Csúsztatás")
+  }
+  { Button_tulora Button
+    MoveScaled(45,19,16,4)
+    Text = ("Túlóra")
+  }
+  { SmtpClient1 #SmtpClient
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(64,3,34,3)
+    Font = Font["-2"]
+    Text = ("Adott hónapban küldött munkarend jelentések:")
+  }
+  { Separator1 Separator
+    MoveScaled(17,32,45,4)
+  }
+  { Label1 Label
+    MoveScaled(1,32,16,4)
+    Text = ("Gyors levélküldés")
+  }
+  { Button1 Button
+    MoveScaled(45,58,16,4)
+    Text = ("Küld")
+  }
+  { textbox_mailto TextBox
+    MoveScaled(4,37,24,4)
+    Text = ("mindenki@triak.hu")
+  }
+  { textbox_mailsubject TextBox
+    MoveScaled(37,37,24,4)
+    Text = ("Kiszállásra mentem")
+  }
+  { textarea_mailbody TextArea
+    MoveScaled(4,41,57,16)
+  }
+  { Label2 Label
+    MoveScaled(31,37,6,4)
+    Text = ("Tárgy:")
+  }
+  { Separator2 Separator
+    MoveScaled(62,1,1,60)
+  }
+  { GridView1 GridView
+    MoveScaled(64,6,33,55)
+  }
+}

@@ -1,0 +1,24 @@
+# Gambas Form File 3.0
+{ Form Form 
+  MoveScaled(0,0,36,9)
+  Visible = False
+  Enabled = False
+  Text = ("K\xC3\xA9rem adja meg \xC3\xB3r\xC3\xA1t")
+  Resizable = False
+  { TextBox_ido TextBox 
+    MoveScaled(1,4,24,4)
+    MaxLength = 50
+  }
+  { Button_ido Button 
+    MoveScaled(27,1,8,4)
+    Text = ("Rendben")
+  }
+  { Button1 Button 
+    MoveScaled(27,5,8,4)
+    Text = ("M\xC3\xA9gse")
+  }
+  { Label1 Label 
+    MoveScaled(1,1,24,4)
+    Text = ("\xC3\x93r\xC3\xA1k:")
+  }
+}

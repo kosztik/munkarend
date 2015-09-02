@@ -1,0 +1,106 @@
+' Gambas class file
+
+Static Public ido As String
+Static Public modozat As String
+
+Public Sub _new()
+
+End
+
+Public Sub Form_Open()
+  SmtpClient1.Host = "192.168.50.10"
+  SmtpClient1.Port = 225
+  SmtpClient1.To.Add("kosztik@gmail.com")
+  SmtpClient1.To.Add("munkarend@triak.hu")
+  SmtpClient1.From = "kosztik@triak.hu"
+  'DateChooser1.SetDateColor(Date(Now), 2)
+  
+End
+
+Public Sub Button_normal_Click()
+
+  SmtpClient1.Subject = "Munkarend " & DateChooser1.Month & "." & DateChooser1.Day & " Normal"
+  SmtpClient1.Send()
+  
+End
+
+
+Public Sub Button_tulora_Click()
+  modozat = "T"
+  'FMain.Enabled = FALSE
+  dialogido.Visible = True
+  dialogido.Enabled = True
+  
+  
+End
+
+Public Sub tulora()
+  'TextLabel1.Text = "Munkarend " & DateChooser1.Month & "." & DateChooser1.Day & " Túlóra " & ido & "h"
+  SmtpClient1.Subject = "Munkarend " & DateChooser1.Month & "." & DateChooser1.Day & " Túlóra " & ido & "h"
+  SmtpClient1.Send()
+End
+
+Public Sub csusztatas()
+ 
+  SmtpClient1.Subject = "Munkarend " & DateChooser1.Month & "." & DateChooser1.Day & " Csúsztatás " & ido & "h"
+  SmtpClient1.Send()
+End
+
+Public Sub szabadsag()
+ 
+  SmtpClient1.Subject = "Szabadság " & ido & ""
+  SmtpClient1.Send()
+End
+
+
+Public Sub Button_csusztatas_Click()
+  modozat = "CS"
+  'FMain.Enabled = FALSE
+  dialogido.Visible = True
+  dialogido.Enabled = True
+  
+
+End
+
+Public Sub Button_szabadsag_Click()
+  'SmtpClient1.Subject = "Munkarend " & DateChooser1.Month & "." & DateChooser1.Day & " Szabadság"
+  'SmtpClient1.Send()
+  modozat = "SZ"
+  'FMain.Enabled = FALSE
+  dialogido.Visible = True
+  dialogido.Enabled = True
+
+End
+
+Public Sub exit_Click()
+
+  FMain.CLOSE
+
+End
+
+Public Sub Button1_Click()
+
+  If (Len(textarea_mailbody.Text) = 0) Then 
+      Print Message("Üres üzenet, nem küldhető el!")
+    Return
+  Endif
+  
+  SmtpClient1.To.Clear()
+  SmtpClient1.To.Add(textbox_mailto.Text)
+  SmtpClient1.Subject = textbox_mailsubject.Text
+  SmtpClient1.Add(textarea_mailbody.Text)
+  SmtpClient1.Send()
+
+  ' ERedeti állapot
+  SmtpClient1.To.Add("kosztik@gmail.com")
+  SmtpClient1.To.Add("munkarend@triak.hu")
+  
+    
+
+End
+
+Public Sub settings_Click()
+
+  
+
+End

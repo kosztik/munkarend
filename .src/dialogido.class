@@ -1,0 +1,40 @@
+' Gambas class file
+
+
+Public Sub Button_ido_Click()
+  FMain.Enabled = True
+  FMain.ido = TextBox_ido.Text
+  dialogido.Visible = False
+  Select Case FMain.modozat
+    Case "T"
+      FMain.tulora()
+    Case "CS"
+      FMain.csusztatas()
+    Case "SZ"
+      FMain.szabadsag()
+     
+  End Select
+    
+End
+
+Public Sub Button1_Click()
+  dialogido.Visible = False
+  FMain.Enabled = True
+End
+
+
+Public Sub Form_Show()
+
+    Select Case FMain.modozat
+    Case "T"
+      Label1.Text = "Órák:"
+      dialogido.text = "Kérem adja meg az órát:"
+    Case "CS"
+      Label1.Text = "Órák:"
+      dialogido.text = "Kérem adja meg az órát:"
+    Case "SZ"
+      Label1.Text = "Napok:"
+      dialogido.text = "Kérem adja meg a szabadságos napokat:"
+  End Select
+
+End
